@@ -1,3 +1,4 @@
+import { use } from "react";
 import { withoutRole } from "src/lib/auth";
 import { ERROR_CODES } from "src/lib/constants";
 import { OasstError } from "src/lib/oasst_api_client";
@@ -14,14 +15,23 @@ import { getBackendUserCore, getUserLanguage } from "src/lib/users";
  * 4) Return everything to the client.
  */
 const handler = withoutRole("banned", async (req, res, token) => {
+  console.log("helloooo")
   // Fetch the new task.
   const { task_type } = req.query;
+  console.log("task_type: ", task_type)
   const userLanguage = getUserLanguage(req);
+  console.log("userLanguage: ", userLanguage)
 
+  console.log("token.sub: ", token.sub)
   const user = await getBackendUserCore(token.sub);
+  console.log("user")
+  console.log(user)
   const oasstApiClient = createApiClientFromUser(user);
+  console.log("oasstApiClient")
+  console.log(oasstApiClient)
   let task;
   try {
+    console.log(task_type)
     task = await oasstApiClient.fetchTask(task_type as string, user, userLanguage);
   } catch (err) {
     if (err instanceof OasstError && err.errorCode === ERROR_CODES.TASK_REQUESTED_TYPE_NOT_AVAILABLE) {

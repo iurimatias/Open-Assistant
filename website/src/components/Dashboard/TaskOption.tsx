@@ -37,7 +37,11 @@ export const TaskOption = ({ content }: TasksOptionProps) => {
         }, {} as Record<TaskType, TaskInfo>),
     [content]
   );
-
+  
+  // debugger
+  
+  // console.log(taskInfoMap)
+  
   return (
     <Box className="flex flex-col gap-14">
       {Object.entries(content).map(([category, taskTypes]) => (
@@ -86,7 +90,7 @@ export const TaskOption = ({ content }: TasksOptionProps) => {
 
 export const allTaskOptions: TasksOptionProps["content"] = {
   [TaskCategory.Random]: [TaskType.random],
-  [TaskCategory.Create]: [TaskType.initial_prompt, TaskType.prompter_reply, TaskType.assistant_reply],
+  [TaskCategory.Create]: [TaskType.initial_prompt, TaskType.prompt_reply, TaskType.prompter_reply, TaskType.assistant_reply],
   [TaskCategory.Evaluate]: [
     TaskType.rank_initial_prompts,
     TaskType.rank_prompter_replies,

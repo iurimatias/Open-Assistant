@@ -123,4 +123,14 @@ export const TaskInfos: TaskInfo[] = [
     mode: "simple",
     update_type: TaskUpdateType.TextLabels,
   },
+  {
+    id: "prompt_reply_pair",
+    category: TaskCategory.Label,
+    pathname: "/create/prompt_reply",
+    // pathname: "/label/label_assistant_reply",
+    help_link: "https://projects.laion.ai/Open-Assistant/docs/guides/prompting",
+    type: TaskType.prompt_reply,
+    mode: "full",
+    update_type: TaskUpdateType.TextLabels,
+  }
 ];

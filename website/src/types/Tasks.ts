@@ -6,6 +6,11 @@ export interface CreateInitialPromptTask extends BaseTask {
   hint: string;
 }
 
+export interface CreatePromptReplyTask extends BaseTask {
+  type: TaskType.prompt_reply;
+  hint: string;
+}
+
 export interface CreateAssistantReplyTask extends BaseTask {
   type: TaskType.assistant_reply;
   conversation: Conversation;
@@ -16,7 +21,7 @@ export interface CreatePrompterReplyTask extends BaseTask {
   conversation: Conversation;
 }
 
-export type CreateTaskType = CreateInitialPromptTask | CreateAssistantReplyTask | CreatePrompterReplyTask;
+export type CreateTaskType = CreateInitialPromptTask | CreateAssistantReplyTask | CreatePrompterReplyTask | CreatePromptReplyTask;
 
 export interface RankInitialPromptsTask extends BaseTask {
   type: TaskType.rank_initial_prompts;

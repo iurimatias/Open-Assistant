@@ -34,6 +34,9 @@ const Dashboard = () => {
   const availableTaskTypes = useMemo(() => {
     const taskTypes = filterAvailableTasks(data ?? {});
     return { [TaskCategory.Random]: taskTypes };
+
+    // content.Random.push("prompt_reply_pair")
+
   }, [data]);
 
   return (

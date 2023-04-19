@@ -21,7 +21,7 @@ class TaskRequestType(str, enum.Enum):
     label_initial_prompt = "label_initial_prompt"
     label_assistant_reply = "label_assistant_reply"
     label_prompter_reply = "label_prompter_reply"
-
+    prompt_reply = "prompt_reply"
 
 class User(BaseModel):
     id: str

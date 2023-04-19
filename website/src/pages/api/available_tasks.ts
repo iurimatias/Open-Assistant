@@ -7,6 +7,9 @@ const handler = withoutRole("banned", async (req, res, token) => {
   const oasstApiClient = createApiClientFromUser(user);
   const userLanguage = getUserLanguage(req);
   const availableTasks = await oasstApiClient.fetch_available_tasks(user, userLanguage);
+  availableTasks["prompt_reply"] = 2
+  console.log(availableTasks)
+
   res.status(200).json(availableTasks);
 });
 

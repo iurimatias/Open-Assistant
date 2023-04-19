@@ -1,7 +1,8 @@
 import {
   useCreateAssistantReply,
-  useCreateInitialPrompt,
   useCreatePrompterReply,
+  useCreateInitialPrompt,
+  useCreatePromptReply,
 } from "src/hooks/tasks/useCreateReply";
 import { useGenericTaskAPI } from "src/hooks/tasks/useGenericTaskAPI";
 import {
@@ -33,6 +34,7 @@ export const taskApiHooks: TaskApiHooks = {
   [TaskType.random]: useGenericTaskAPI,
   [TaskType.assistant_reply]: useCreateAssistantReply,
   [TaskType.initial_prompt]: useCreateInitialPrompt,
+  [TaskType.prompt_reply]: useCreatePromptReply,
   [TaskType.label_assistant_reply]: useLabelAssistantReplyTask,
   [TaskType.label_initial_prompt]: useLabelInitialPromptTask,
   [TaskType.label_prompter_reply]: useLabelPrompterReplyTask,
